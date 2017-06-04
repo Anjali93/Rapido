@@ -8,20 +8,46 @@
     tools:context="com.assignment.rapido.rapidomap.MapsActivity">
 
 
-
-    <Button android:id="@+id/source"
-        android:text="Source"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="left|bottom"
-    />
-
-    <Button android:id="@+id/destination"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
         android:layout_height="wrap_content"
-        android:paddingLeft="7dp"
-        android:layout_gravity="center|bottom"
-        android:text="Destination"
-        />
+        android:layout_width="match_parent">
+            <TextView
+                android:id="@+id/TextSource"
+                android:textColor="#FFFFFF"
+                android:clickable="true"
+                android:background="@android:drawable/dark_header"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:text="Choose Source"
+                android:layout_height="30dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:inputType="text"
+                android:textSize="17sp"/>
 
+            <TextView
+                android:id="@+id/TextDestination"
+                android:textColor="#FFFFFF"
+                android:clickable="true"
+                android:background="@android:drawable/dark_header"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingBottom="5dp"
+                android:text="Choose Destination"
+                android:layout_height="30dp"
+                android:paddingTop="5dp"
+                android:inputType="text"
+                android:textSize="17sp"/>
+    </LinearLayout>
     </fragment>
