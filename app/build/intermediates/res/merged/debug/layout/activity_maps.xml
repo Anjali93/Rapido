@@ -1,0 +1,92 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/Rout"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:drawable/bottom_bar"
+        android:backgroundTint="#FFFFFF"
+        >
+
+        <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/listview1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/dir"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+            <TextView
+                android:id="@+id/TextSource"
+                android:textColor="#FFFFFF"
+                android:clickable="true"
+                android:background="@android:drawable/dark_header"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:text="Choose Source"
+                android:layout_height="30dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:inputType="text"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:id="@+id/TextDestination"
+                android:textColor="#FFFFFF"
+                android:clickable="true"
+                android:background="@android:drawable/dark_header"
+                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="20dp"
+                android:paddingBottom="5dp"
+                android:text="Choose Destination"
+                android:layout_height="30dp"
+                android:paddingTop="5dp"
+                android:inputType="text"
+                android:textSize="17sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/findroute"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom">
+        <TextView
+            android:id="@+id/findrout"
+            android:textColor="#FFFFFF"
+            android:clickable="true"
+            android:background="@android:drawable/dark_header"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_width="match_parent"
+            android:text="Show Route"
+            android:textAlignment="center"
+            android:layout_height="30dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:inputType="text"
+            android:textSize="17sp"
+            />
+    </LinearLayout>
+    </fragment>
