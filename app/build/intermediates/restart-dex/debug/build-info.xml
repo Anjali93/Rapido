@@ -4,52 +4,30 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="10445136166172"
+    timestamp="13518012736649"
     token="1975864489013606982" >
 
     <task
         name="javac"
-        duration="561" />
+        duration="2324" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="221" />
+        duration="893" />
     <task
         name="verifier"
-        duration="35" />
+        duration="219" />
 
     <artifact
-        location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\res\resources-debug.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-        type="DEX" />
-    <artifact
-        location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-        type="DEX" />
+        location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="5299741446226" >
+    <build timestamp="13518012736649" >
         <artifact
             location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="10087130481993" >
-        <artifact
-            location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
-            type="DEX" />
-    </build>
-    <build timestamp="10445136166172" >
-        <artifact
-            location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\res\resources-debug.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
-        <artifact
-            location="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>

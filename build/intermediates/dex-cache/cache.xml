@@ -1,3 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="77db25b9b7dad97b7e6f1461b2ca279d52410a18">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8b01aa4d2fedb5047865ccc12c5ccec16b9a6e79\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.3.1_c58bae68adf4f1b15f6dea2f5bf9458073aaa78d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_f1797eba3fc4d2fafb0961fb341e4bdd1b1c1cea\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="3f0a85e6000998ac322ddd50750e8cf91601a84b">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.2.6_ce8ac3124fbe34d949e06854c2d3cb0af33ab16e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.3.1_cb083e2580e61e962439e34c8ae3aefe87cb1ffc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_df393af8ef3a0426e76f96f6d8c8e7fb75bd9ee7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="7979972576b6dbb1688052e42e5199abb54f81ba">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.2.6_0634215e9c63e04484cff91d51a63f47dff9277e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="144c069ebe456048ffc0667d29cebf173fd50792">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7fcee394cffaeb52424473ccc473f601c323553a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="69e74a8b1cbf5b8ee0fc0cca6bab1ac6c45efef8">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.2.6_952253290727af4dfc78764c0e272fe616b220ac\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_14adb017581085d4c2713885b0fda574014fe81d\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.3.1_0c6db7766c2ff25aea419ef3eb17bc30a084b7c0\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_9f36ca19e23542e3be5d68475bdba31de6ce2d0a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.3.0_3a425aefa926870eaf559a161c4b179e07e63e32\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.3.1_c9a5d00374740ef93d66018a436a78ad9d65699e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-multidex-1.0.1_75a885a276fe6353503838c45f03eda3ac6b7b87\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.1.0_8e20e90985f19d80d3236390636ed02efe1c1c1a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.3.1_e4a8932c7c4677a9eae8c069f03d9f12c19a3cc8\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.3.1_694d97e8f624d337b8ab51374071f6620845b303\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="577aa74e06e6b4b407ff23ac75043685ae26dcbb">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-10.2.6_cc05e0e183c27e08e00f39b52ad3ce200b574d42\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="cf5f630e354827a90ffe90ce2a330495108f0595">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-10.2.6_3120c64573910452546e1bb9f43fe7a022e2a7ef\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.3.1_e72994fe720bbf56a3103720aa9dab70eee2d460\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.3.1_7bdeb43d43bef3929cfdf17907b0f50608884280\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="0c6924cbba8248329a8c58ead6a380efe7eee76e">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.2.6_cb1fe0b8511d2cd3362b4ebd21d74fbf3c3007c5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.2.6\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="900a290779cdb4eb2e63b6f7806fd9f30ce4f60d">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.2.6_7aa3f7cd1d0d519e1227919864cf9cc8978d7a4e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        revision="25.0.3"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\dell\AndroidStudioProjects\RapidoMap\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.3.1_d0136cd6c7d2190a541418375a71540fcfeb0971\classes.dex" />
+    </item>
+
+</items>
