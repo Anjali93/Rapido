@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Route
 {
-//    @SerializedName("legs")
-//    List<Leg> legs;
+    @SerializedName("legs")
+    List<Leg> legs;
     OverviewPolyline overview_polyline;
 
     public OverviewPolyline getOverview_polyline()
@@ -25,13 +25,13 @@ public class Route
         this.overview_polyline = overview_polyline;
     }
 
-//    public List<Leg> getLegs() {
-//        return legs;
-//    }
-//
-//    public void setLegs(List<Leg> legs) {
-//        this.legs = legs;
-//    }
+    public List<Leg> getLegs() {
+        return legs;
+    }
+
+    public void setLegs(List<Leg> legs) {
+        this.legs = legs;
+    }
 
     public ArrayList<LatLng> DecodePoly()
     {
@@ -43,21 +43,25 @@ public class Route
         while (index < len)
         {
             int b, shift = 0, result = 0;
-            do {
+            do
+            {
                 b = overview_polyline.points.charAt(index++) - 63;
                 result |= (b & 0x1f) << shift;
                 shift += 5;
-            } while (b >= 0x20);
+            }
+            while (b >= 0x20);
             int dlat = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
             lat += dlat;
 
             shift = 0;
             result = 0;
-            do {
+            do
+            {
                 b = overview_polyline.points.charAt(index++) - 63;
                 result |= (b & 0x1f) << shift;
                 shift += 5;
-            } while (b >= 0x20);
+            }
+            while (b >= 0x20);
             int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
             lng += dlng;
 

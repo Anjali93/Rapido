@@ -9,6 +9,16 @@ public class Step
     @SerializedName("end_location")
     Location EndLocation;
 
+    public String getHtml_instructions() {
+        return html_instructions;
+    }
+
+    public void setHtml_instructions(String html_instructions) {
+        this.html_instructions = html_instructions;
+    }
+
+    String html_instructions;
+
     public Location getEndLocation() {
         return EndLocation;
     }

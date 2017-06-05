@@ -47,7 +47,7 @@ public class RapidoMapsClient implements Callback<DirectionResponse>
             Log.i("Routes" , directionResponse.toString());
 
             MapsActivity.setPolyLines(directionResponse);
-            //changesList.forEach(change -> System.out.println(change.subject));
+
         } else {
             Log.i("Error" ,Response.errorBody().toString());
         }

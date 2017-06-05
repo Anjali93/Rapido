@@ -8,13 +8,19 @@ import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
-
 import com.assignment.rapido.domain.DirectionResponse;
 import com.assignment.rapido.util.RapidoMapsClient;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -22,11 +28,13 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -34,11 +42,12 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, android.location.LocationListener {
+public class MapsActivity extends android.support.v4.app.FragmentActivity implements OnMapReadyCallback, android.location.LocationListener {
 
     private static GoogleMap mMap;
     private static Place Source;
     private static Place Destination;
+    LinearLayout   DirectionsInput;
     TextView SourceText ;
     TextView DestinationText;
     Intent intent;
@@ -46,22 +55,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     PolylineOptions       SelectedRoute;
     static int PolyIndex=-1;
     int     SelectedPolyIndex;
+    ListView    ListOfDirections;
+    LinearLayout  layout;
+    LinearLayout  ShowRoute;
+    static DirectionResponse  DirectionsResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_maps);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         if(mapFragment.getView() != null)
         mapFragment.getView().setClickable(true);
-
-        PolylinesList = new LinkedList<>();
-        SelectedPolyIndex = -1;
-        SelectedRoute = new PolylineOptions();
-        SelectedRoute.geodesic(true).clickable(true);
 
         try
         {
@@ -72,6 +81,58 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         {
             // TODO: Handle the error.
         }
+
+        DirectionsInput = (LinearLayout)findViewById(R.id.dir);
+        layout = (LinearLayout)findViewById(R.id.Rout);
+        layout.setVisibility(View.INVISIBLE);
+
+        ShowRoute = (LinearLayout)findViewById(R.id.findroute);
+        TextView findRoute = (TextView) findViewById(R.id.findrout);
+        findRoute.setClickable(true);
+
+        findRoute.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                if(Source == null || Destination == null)
+                    return;
+
+                LinearLayout  layout = (LinearLayout)findViewById(R.id.Rout);
+
+                ListOfDirections = (ListView)findViewById(R.id.listview1);
+                ArrayList<String> list = new ArrayList();
+
+                for(int j =0 ; j<DirectionsResponse.getRoutes().get(PolyIndex).getLegs().size() ; j++)
+                    for(int i =0; i < DirectionsResponse.getRoutes().get(PolyIndex).getLegs().get(j).getSteps().size() ; i++)
+                    {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                            list.add(Html.fromHtml(DirectionsResponse.getRoutes().get(PolyIndex).getLegs().get(j).getSteps().get(i).getHtml_instructions(), 1).toString());
+                        }
+                        else
+                            list.add(Html.fromHtml(DirectionsResponse.getRoutes().get(PolyIndex).getLegs().get(j).getSteps().get(i).getHtml_instructions()).toString());
+                    }
+
+
+               ArrayAdapter adapter = new ArrayAdapter(MapsActivity.this , android.R.layout.simple_list_item_activated_1 , list);
+                ListOfDirections.setAdapter(adapter);
+
+
+                ListOfDirections.setScrollbarFadingEnabled(true);
+                // Prepare the View for the animation
+                layout.setVisibility(View.VISIBLE);
+                DirectionsInput.setVisibility(View.INVISIBLE);
+                ShowRoute.setVisibility(View.INVISIBLE);
+
+                Animation bottomup = AnimationUtils.loadAnimation(getApplicationContext() , R.anim.anim);
+                layout.setAnimation(bottomup);
+            }
+
+        });
+
+        PolylinesList = new LinkedList<>();
+        SelectedPolyIndex = -1;
+        SelectedRoute = new PolylineOptions();
+        SelectedRoute.geodesic(true).clickable(true);
     }
 
     /**
@@ -88,8 +149,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         mMap = googleMap;
         mMap.getUiSettings().setMapToolbarEnabled(false);
-        mMap.getUiSettings().setZoomControlsEnabled(true);
-
 
         SourceText = (TextView) findViewById(R.id.TextSource);
         DestinationText = (TextView) findViewById(R.id.TextDestination);
@@ -137,9 +196,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         }
                     }
-                    if(found){
+                    if(found)
+                    {
                         Draw();
-                        break;
                     }
                 }
             }
@@ -157,8 +216,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                 Source = PlaceAutocomplete.getPlace(this, data);
                 Log.i("TAG", "Place: " + Source.getName());
-                LatLng LatLong = Source.getLatLng();
-
                 SourceText.setText(Source.getAddress());
 
                 Draw();
@@ -168,7 +225,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             else if (resultCode == PlaceAutocomplete.RESULT_ERROR)
             {
                 Status status = PlaceAutocomplete.getStatus(this, data);
-                // TODO: Handle the error.
                 Log.i("TAG", status.getStatusMessage());
 
             }
@@ -184,7 +240,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Destination = PlaceAutocomplete.getPlace(this, data);
                 Log.i("TAG", "Place: " + Destination.getName());
                 DestinationText.setText(Destination.getAddress());
-                LatLng LatLong = Destination.getLatLng();
 
                 Draw();
 
@@ -192,7 +247,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             else if (resultCode == PlaceAutocomplete.RESULT_ERROR)
             {
                 Status status = PlaceAutocomplete.getStatus(this, data);
-                // TODO: Handle the error.
                 Log.i("TAG", status.getStatusMessage());
 
             }
@@ -242,7 +296,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     public static void setPolyLines(DirectionResponse directionResponse)
     {
+        DirectionsResponse = directionResponse;
         PolylinesList.clear();
+        LatLngBounds.Builder b = new LatLngBounds.Builder();
         for (int j = directionResponse.getRoutes().size() - 1; j >= 0; j--)
         {
             PolylineOptions PolyLine = new PolylineOptions().geodesic(true);
@@ -250,11 +306,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ArrayList<LatLng> PointsList = directionResponse.getRoutes().get(j).DecodePoly();
             for (int i = 0; i < PointsList.size(); i++) {
                 PolyLine.add(PointsList.get(i));
+                b.include(new LatLng(PointsList.get(i).latitude , PointsList.get(i).longitude));
 
             }
             PolylinesList.add(PolyLine);
         }
         PolyIndex = directionResponse.getRoutes().size() > 0 ? 0 : -1;
+
+        LatLngBounds bounds = b.build();
+        CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds , 1000, 1000 , 5);
+        mMap.animateCamera(cu);
         Draw();
     }
 
@@ -273,7 +334,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onProviderEnabled(String provider)
     {
-        LocationManager manager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
@@ -294,11 +354,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     {
         mMap.clear();
         if(Source!=null){
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Source.getLatLng(), 13));
+
+            if(PolylinesList.size() == 0)
+            {
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Source.getLatLng(), 13));
+            }
             mMap.addMarker(new MarkerOptions().position(Source.getLatLng()).title("MyLocation").draggable(true));
         }
         if(Destination!=null){
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Destination.getLatLng(), 13));
             mMap.addMarker(new MarkerOptions().position(Destination.getLatLng()).title("MyLocation").draggable(true));
         }
 
@@ -317,5 +380,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onProviderDisabled(String provider)
     {
         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        switch(keyCode)
+        {
+            case KeyEvent.KEYCODE_BACK:
+                // do something here
+                DirectionsInput.setVisibility(View.VISIBLE);
+                ShowRoute.setVisibility(View.VISIBLE);
+                Animation bottodown = AnimationUtils.loadAnimation(getApplicationContext() , R.anim.bottom_bottom);
+                layout.setAnimation(bottodown);
+                layout.setVisibility(View.INVISIBLE);
+
+                return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
